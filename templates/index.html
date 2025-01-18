@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Say Hello</title>
+		<link rel="stylesheet" href="{{
+			url_for('static', filename='css/main.css')}}"
+		></link>
+	</head>
+	<body>
+		<img src="https://static.vecteezy.com/system/resources/thumbnails/008/574/230/small/hello-letters-with-hand-logo-template-palm-logo-concept-for-friendly-business-identity-poster-banner-illustration-vector.jpg"><img/>
+		<br>
+		<form action="greet" method="post">
+			{%for message in get_flashed_messages()%}
+				<p>{{message}}</p>
+			{%endfor%}
+			<br>
+			<input type="text" name="name_input">
+			<br>
+			<input type="submit" value="GREET" id="greet">
+			<br>
+		<form/>
+	</body>
+</html>
